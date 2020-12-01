@@ -1,5 +1,6 @@
 const axios = require("axios");
 const cheerio = require("cheerio");
+const cron = require("node-cron");
 
 // axios를 활용해 AJAX로 HTML 문서를 가져오는 함수 구현
 async function getHTML() {
@@ -30,5 +31,16 @@ getHTML()
   })
   .then(res => console.log(res));
 
+async function handleAsync() {
+  const img = await getHTML();
+  console.log("img", img);
+}
 
+// 매 고정 시간마다 함수 호출
+// second minute hour day-of-month month day-of-week
+cron.schedule("*/1 * */1 * *", async function () {
+    console.log("running a task every one day");
+  });
+
+// 이미지 태그 위치
 // body #container #contents #searchOptionForm .newcx-container .newcx-body .newcx-main .newcx-list .productList .baby-product .baby-product-link .baby-product-wrap .image img
