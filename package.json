@@ -1,0 +1,17 @@
+{
+  "name": "project-js-crawling",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/free-ko/project-js-crawling.git",
+  "author": "free-ko <duddnr654@naver.com>",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.21.0",
+    "cheerio": "^1.0.0-rc.3",
+    "node-cron": "^2.0.3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./main.js"
+  },
+}
