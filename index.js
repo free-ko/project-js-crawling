@@ -5,7 +5,7 @@ const cron = require("node-cron");
 // axios를 활용해 AJAX로 HTML 문서를 가져오는 함수 구현
 async function getHTML() {
   try {
-    return await axios.get("https://www.coupang.com/np/categories/417869/?listSize=60&brand=&offerCondition=&filterType=&isPriceRange=false&minPrice=&maxPrice=&page=1&channel=user&fromComponent=Y&selectedPlpKeepFilter=&sorter=bestAsc&filter=&component=417769&rating=0");
+    return await axios.get("https://www.coupang.com/np/categories/417869/");
   } catch (error) {
     console.error(error);
   }
@@ -37,10 +37,10 @@ async function handleAsync() {
 }
 
 // 매 고정 시간마다 함수 호출
+// 테스트 하기 위해 1분마다 호출
 // second minute hour day-of-month month day-of-week
 cron.schedule("*/1 * */1 * *", async function () {
     console.log("running a task every one day");
   });
 
-// 이미지 태그 위치
-// body #container #contents #searchOptionForm .newcx-container .newcx-body .newcx-main .newcx-list .productList .baby-product .baby-product-link .baby-product-wrap .image img
+
